@@ -174,7 +174,7 @@ def extract_pdf_with_claude(pdf_bytes, api_key):
     pdf_b64 = pdf_to_base64(pdf_bytes)
 
     response = client.messages.create(
-        model="claude-sonnet-4-20250514",
+        model="claude-sonnet-4-6",
         max_tokens=8000,
         messages=[{
             "role": "user",
@@ -206,7 +206,7 @@ def extract_image_with_claude(image_bytes, filename, page_number, api_key):
     prompt = EXTRACTION_PROMPT + f"\n\nThis is image {page_number} (filename: {filename}). Set pageNumber to {page_number} in your response."
 
     response = client.messages.create(
-        model="claude-sonnet-4-20250514",
+        model="claude-sonnet-4-6",
         max_tokens=4000,
         messages=[{
             "role": "user",
